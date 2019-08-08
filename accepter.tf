@@ -26,15 +26,15 @@ variable "accepter_allow_remote_vpc_dns_resolution" {
 }
 
 # Accepter's credentials
-provider "aws" {
-  alias   = "accepter"
-  region  = var.accepter_region
-  version = ">= 1.25"
+# provider "aws" {
+#   alias   = "accepter"
+#   region  = var.accepter_region
+#   version = ">= 1.25"
 
-  assume_role {
-    role_arn = var.accepter_aws_assume_role_arn
-  }
-}
+#   assume_role {
+#     role_arn = var.accepter_aws_assume_role_arn
+#   }
+# }
 
 locals {
   accepter_attributes = concat(var.attributes, ["accepter"])

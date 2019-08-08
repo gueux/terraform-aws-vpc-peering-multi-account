@@ -26,14 +26,14 @@ variable "requester_allow_remote_vpc_dns_resolution" {
 }
 
 # Requestors's credentials
-provider "aws" {
-  alias  = "requester"
-  region = var.requester_region
+# provider "aws" {
+#   alias  = "requester"
+#   region = var.requester_region
 
-  assume_role {
-    role_arn = var.requester_aws_assume_role_arn
-  }
-}
+#   assume_role {
+#     role_arn = var.requester_aws_assume_role_arn
+#   }
+# }
 
 locals {
   requester_attributes = concat(var.attributes, ["requester"])
